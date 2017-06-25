@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.nasdanika.codegen.ecore:EcoreCodeGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.nasdanika.codegen.ecore="urn:org.nasdanika.codegen.ecore" selected="true" name="nature">
+  <configuration id="general" name="General">
+    <configuration xsi:type="org.nasdanika.codegen.ecore:EcoreCodeGeneratorConfiguration" targetProject="org.nasdanika.nature.app" sourceFolder="src" basePackage="org.nasdanika.nature.app"/>
+  </configuration>
+  <packageSources location="nature.genmodel"/>
+  <generationTargets>org.nasdanika.codegen.ecore.web.ui/web-ui</generationTargets>
+</org.nasdanika.codegen.ecore:EcoreCodeGenerator>

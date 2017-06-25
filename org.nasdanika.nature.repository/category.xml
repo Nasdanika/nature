@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	
+	   <feature url="features/org.nasdanika.nature.feature_1.0.0.qualifier.jar" id="org.nasdanika.nature.feature" version="1.0.0.qualifier">
+	      <category name="org.nasdanika.nature.category"/>
+	   </feature>
+   <category-def name="org.nasdanika.nature.category" label="Nature">
+      <description>
+         org.nasdanika.nature.
+      </description>
+   </category-def>
+</site>

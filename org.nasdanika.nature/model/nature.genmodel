@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.nature/src" modelPluginID="org.nasdanika.nature"
+    modelName="nature" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>nature.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Nature" basePackage="org.nasdanika" disposableProviderFactory="true"
+      ecorePackage="nature.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="nature.ecore#//Размер">
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Размер/Маленький"/>
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Размер/Большой"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="nature.ecore#//Цвет">
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Белый"/>
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Серый"/>
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Рыжий"/>
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Жёлтый"/>
+      <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Зелёный"/>
+    </genEnums>
+    <genClasses ecoreClass="nature.ecore#//Лес">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nature.ecore#//Лес/живоесущество"/>
+    </genClasses>
+    <genClasses ecoreClass="nature.ecore#//ЖивоеСущество">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nature.ecore#//ЖивоеСущество/размер"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nature.ecore#//ЖивоеСущество/цвет"/>
+    </genClasses>
+    <genClasses ecoreClass="nature.ecore#//Зверь">
+      <genTypeParameters ecoreTypeParameter="nature.ecore#//Зверь/П"/>
+      <genOperations ecoreOperation="nature.ecore#//Зверь/ест">
+        <genParameters ecoreParameter="nature.ecore#//Зверь/ест/пища"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="nature.ecore#//Растение"/>
+    <genClasses ecoreClass="nature.ecore#//Трава"/>
+    <genClasses ecoreClass="nature.ecore#//Заяц"/>
+    <genClasses ecoreClass="nature.ecore#//Лис"/>
+    <genClasses ecoreClass="nature.ecore#//Пища"/>
+  </genPackages>
+</genmodel:GenModel>
