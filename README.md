@@ -6,3 +6,5 @@
 ## Ресурсы
 
 * [Видео показывающее процесс создания модели и веб приложения](https://youtu.be/nYIscAuDoCI). 
+
+![class diagram](org.nasdanika.nature/nature-class-diagram.png)
