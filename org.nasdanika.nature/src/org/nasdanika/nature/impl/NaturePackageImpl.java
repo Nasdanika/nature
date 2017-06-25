@@ -467,6 +467,13 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 			 "icon", "{{context-path}}/images/forest.png"
 		   });	
 		addAnnotation
+		  (getЛес_Живоесущество(), 
+		   source, 
+		   new String[] {
+			 "model-element-label", "\u0416\u0438\u0432\u044b\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430",
+			 "type-column", "{{icon}} {{eclass-label}}"
+		   });	
+		addAnnotation
 		  (живоеСуществоEClass, 
 		   source, 
 		   new String[] {

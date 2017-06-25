@@ -40,6 +40,7 @@ public interface Лес extends CDOObject {
 	 * @return the value of the '<em>Живоесущество</em>' containment reference list.
 	 * @see org.nasdanika.nature.NaturePackage#getЛес_Живоесущество()
 	 * @model containment="true"
+	 *        annotation="org.nasdanika.cdo.web.render model-element-label='\u0416\u0438\u0432\u044b\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430' type-column='{{icon}} {{eclass-label}}'"
 	 * @generated
 	 */
 	EList<ЖивоеСущество> getЖивоесущество();

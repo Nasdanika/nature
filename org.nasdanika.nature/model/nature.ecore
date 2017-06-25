@@ -10,7 +10,12 @@
       <details key="icon" value="{{context-path}}/images/forest.png"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="живоесущество" upperBound="-1"
-        eType="#//ЖивоеСущество" containment="true"/>
+        eType="#//ЖивоеСущество" containment="true">
+      <eAnnotations source="org.nasdanika.cdo.web.render">
+        <details key="model-element-label" value="Живые существа"/>
+        <details key="type-column" value="{{icon}} {{eclass-label}}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ЖивоеСущество" abstract="true">
     <eAnnotations source="org.nasdanika.cdo.web.render">
