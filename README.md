@@ -14,3 +14,7 @@
 ## Веб интерфейс
 
 ![web interface](web-ui-screenshot.png)
+
+## Интегрированная документация модели
+
+![information center](information-center.png)
