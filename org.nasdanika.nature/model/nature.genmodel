@@ -22,7 +22,7 @@
       <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Зелёный"/>
     </genEnums>
     <genClasses ecoreClass="nature.ecore#//Лес">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nature.ecore#//Лес/живоесущество"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nature.ecore#//Лес/живыеСущества"/>
     </genClasses>
     <genClasses ecoreClass="nature.ecore#//ЖивоеСущество">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nature.ecore#//ЖивоеСущество/размер"/>

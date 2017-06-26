@@ -20,7 +20,7 @@ import org.nasdanika.nature.Лес;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.nature.impl.ЛесImpl#getЖивоесущество <em>Живоесущество</em>}</li>
+ *   <li>{@link org.nasdanika.nature.impl.ЛесImpl#getЖивыеСущества <em>Живые Существа</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,8 +61,8 @@ public class ЛесImpl extends CDOObjectImpl implements Лес {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<ЖивоеСущество> getЖивоесущество() {
-		return (EList<ЖивоеСущество>)eGet(NaturePackage.Literals.ЛЕС__ЖИВОЕСУЩЕСТВО, true);
+	public EList<ЖивоеСущество> getЖивыеСущества() {
+		return (EList<ЖивоеСущество>)eGet(NaturePackage.Literals.ЛЕС__ЖИВЫЕ_СУЩЕСТВА, true);
 	}
 
 } //ЛесImpl

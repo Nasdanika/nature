@@ -178,7 +178,7 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getЛес_Живоесущество() {
+	public EReference getЛес_ЖивыеСущества() {
 		return (EReference)лесEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -319,7 +319,7 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 
 		// Create classes and their features
 		лесEClass = createEClass(ЛЕС);
-		createEReference(лесEClass, ЛЕС__ЖИВОЕСУЩЕСТВО);
+		createEReference(лесEClass, ЛЕС__ЖИВЫЕ_СУЩЕСТВА);
 
 		живоеСуществоEClass = createEClass(ЖИВОЕ_СУЩЕСТВО);
 		createEAttribute(живоеСуществоEClass, ЖИВОЕ_СУЩЕСТВО__РАЗМЕР);
@@ -391,7 +391,7 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(лесEClass, Лес.class, "Лес", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getЛес_Живоесущество(), this.getЖивоеСущество(), null, "живоесущество", null, 0, -1, Лес.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЛес_ЖивыеСущества(), this.getЖивоеСущество(), null, "живыеСущества", null, 0, -1, Лес.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(живоеСуществоEClass, ЖивоеСущество.class, "ЖивоеСущество", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getЖивоеСущество_Размер(), this.getРазмер(), "размер", null, 0, 1, ЖивоеСущество.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -467,7 +467,7 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 			 "icon", "{{context-path}}/images/forest.png"
 		   });	
 		addAnnotation
-		  (getЛес_Живоесущество(), 
+		  (getЛес_ЖивыеСущества(), 
 		   source, 
 		   new String[] {
 			 "model-element-label", "\u0416\u0438\u0432\u044b\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430",

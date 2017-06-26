@@ -69,13 +69,13 @@ public interface NaturePackage extends EPackage {
 	int ЛЕС = 0;
 
 	/**
-	 * The feature id for the '<em><b>Живоесущество</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Живые Существа</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЛЕС__ЖИВОЕСУЩЕСТВО = 0;
+	int ЛЕС__ЖИВЫЕ_СУЩЕСТВА = 0;
 
 	/**
 	 * The number of structural features of the '<em>Лес</em>' class.
@@ -458,15 +458,15 @@ public interface NaturePackage extends EPackage {
 	EClass getЛес();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.nasdanika.nature.Лес#getЖивоесущество <em>Живоесущество</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.nature.Лес#getЖивыеСущества <em>Живые Существа</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Живоесущество</em>'.
-	 * @see org.nasdanika.nature.Лес#getЖивоесущество()
+	 * @return the meta object for the containment reference list '<em>Живые Существа</em>'.
+	 * @see org.nasdanika.nature.Лес#getЖивыеСущества()
 	 * @see #getЛес()
 	 * @generated
 	 */
-	EReference getЛес_Живоесущество();
+	EReference getЛес_ЖивыеСущества();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.nature.ЖивоеСущество <em>Живое Существо</em>}'.
@@ -624,12 +624,12 @@ public interface NaturePackage extends EPackage {
 		EClass ЛЕС = eINSTANCE.getЛес();
 
 		/**
-		 * The meta object literal for the '<em><b>Живоесущество</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Живые Существа</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ЛЕС__ЖИВОЕСУЩЕСТВО = eINSTANCE.getЛес_Живоесущество();
+		EReference ЛЕС__ЖИВЫЕ_СУЩЕСТВА = eINSTANCE.getЛес_ЖивыеСущества();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.nature.impl.ЖивоеСуществоImpl <em>Живое Существо</em>}' class.
