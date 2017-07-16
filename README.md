@@ -9,7 +9,7 @@
 * [Многопользовательские MDD Web Приложения](https://youtu.be/todo) (видео).
 * Инсталляция
     * [Windows](http://www.nasdanika.org/products/nature/products/)
-    * [Linux]((http://www.nasdanika.org/products/nature/products/)
+    * [Linux](http://www.nasdanika.org/products/nature/products/)
     
 ## Запуск
 
