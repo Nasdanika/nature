@@ -17,17 +17,3 @@
 * Распакуйте, 
 * Запустите ``eclipse.exe`` для Windows или ``eclipse`` для Linux.
 * Откройте http://localhost:8080/nature/index.html в Web браузере.      
-
-## Версия 1.0.0 - без контроля доступа
-
-### Диаграмма классов
-
-![class diagram](org.nasdanika.nature/nature-class-diagram.png)
-
-### Веб интерфейс
-
-![web interface](web-ui-screenshot.png)
-
-### Интегрированная документация модели
-
-![information center](information-center.png)
