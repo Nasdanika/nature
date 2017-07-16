@@ -2,8 +2,10 @@
  */
 package org.nasdanika.nature.impl;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -13,12 +15,14 @@ import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.nature.NatureFactory;
 import org.nasdanika.nature.NaturePackage;
 import org.nasdanika.nature.ЖивоеСущество;
 import org.nasdanika.nature.Заяц;
 import org.nasdanika.nature.Зверь;
 import org.nasdanika.nature.Лес;
+import org.nasdanika.nature.Леший;
 import org.nasdanika.nature.Лис;
 import org.nasdanika.nature.Пища;
 import org.nasdanika.nature.Размер;
@@ -94,6 +98,13 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass лешийEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum размерEEnum = null;
 
 	/**
@@ -102,6 +113,13 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 	 * @generated
 	 */
 	private EEnum цветEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType diagnosticEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -149,6 +167,9 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		SecurityPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theNaturePackage.createPackageContents();
 
@@ -178,8 +199,17 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getЛес_ЖивыеСущества() {
+	public EReference getЛес_Лешие() {
 		return (EReference)лесEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getЛес__СоздатьЛешего__String_String_String_String() {
+		return лесEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -277,6 +307,33 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getЛеший() {
+		return лешийEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getЛеший_Имя() {
+		return (EAttribute)лешийEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getЛеший_Питомцы() {
+		return (EReference)лешийEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getРазмер() {
 		return размерEEnum;
 	}
@@ -288,6 +345,15 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 	 */
 	public EEnum getЦвет() {
 		return цветEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getDiagnostic() {
+		return diagnosticEDataType;
 	}
 
 	/**
@@ -319,7 +385,12 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 
 		// Create classes and their features
 		лесEClass = createEClass(ЛЕС);
-		createEReference(лесEClass, ЛЕС__ЖИВЫЕ_СУЩЕСТВА);
+		createEReference(лесEClass, ЛЕС__ЛЕШИЕ);
+		createEOperation(лесEClass, ЛЕС___СОЗДАТЬ_ЛЕШЕГО__STRING_STRING_STRING_STRING);
+
+		лешийEClass = createEClass(ЛЕШИЙ);
+		createEAttribute(лешийEClass, ЛЕШИЙ__ИМЯ);
+		createEReference(лешийEClass, ЛЕШИЙ__ПИТОМЦЫ);
 
 		живоеСуществоEClass = createEClass(ЖИВОЕ_СУЩЕСТВО);
 		createEAttribute(живоеСуществоEClass, ЖИВОЕ_СУЩЕСТВО__РАЗМЕР);
@@ -341,6 +412,9 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 		// Create enums
 		размерEEnum = createEEnum(РАЗМЕР);
 		цветEEnum = createEEnum(ЦВЕТ);
+
+		// Create data types
+		diagnosticEDataType = createEDataType(DIAGNOSTIC);
 	}
 
 	/**
@@ -366,6 +440,9 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
+
 		// Create type parameters
 		ETypeParameter зверьEClass_П = addETypeParameter(зверьEClass, "П");
 
@@ -374,6 +451,9 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 		зверьEClass_П.getEBounds().add(g1);
 
 		// Add supertypes to classes
+		лесEClass.getESuperTypes().add(theSecurityPackage.getLoginPasswordRealm());
+		лешийEClass.getESuperTypes().add(theSecurityPackage.getLoginPasswordHashUser());
+		живоеСуществоEClass.getESuperTypes().add(theSecurityPackage.getProtected());
 		зверьEClass.getESuperTypes().add(this.getЖивоеСущество());
 		растениеEClass.getESuperTypes().add(this.getЖивоеСущество());
 		траваEClass.getESuperTypes().add(this.getРастение());
@@ -391,7 +471,18 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(лесEClass, Лес.class, "Лес", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getЛес_ЖивыеСущества(), this.getЖивоеСущество(), null, "живыеСущества", null, 0, -1, Лес.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЛес_Лешие(), this.getЛеший(), null, "лешие", null, 0, -1, Лес.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getЛес__СоздатьЛешего__String_String_String_String(), this.getDiagnostic(), "создатьЛешего", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "login", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "имя", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "пароль", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "подтверждениеПароля", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theSecurityPackage.getException());
+
+		initEClass(лешийEClass, Леший.class, "Леший", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getЛеший_Имя(), ecorePackage.getEString(), "имя", null, 1, 1, Леший.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЛеший_Питомцы(), this.getЖивоеСущество(), null, "питомцы", null, 0, -1, Леший.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(живоеСуществоEClass, ЖивоеСущество.class, "ЖивоеСущество", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getЖивоеСущество_Размер(), this.getРазмер(), "размер", null, 0, 1, ЖивоеСущество.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -399,7 +490,7 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 
 		initEClass(зверьEClass, Зверь.class, "Зверь", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getЗверь__Ест__Пища(), null, "ест", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getЗверь__Ест__Пища(), null, "ест", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(зверьEClass_П);
 		addEParameter(op, g1, "пища", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -424,6 +515,9 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 		addEEnumLiteral(цветEEnum, Цвет.РЫЖИЙ);
 		addEEnumLiteral(цветEEnum, Цвет.ЖЁЛТЫЙ);
 		addEEnumLiteral(цветEEnum, Цвет.ЗЕЛЁНЫЙ);
+
+		// Initialize data types
+		initEDataType(diagnosticEDataType, Diagnostic.class, "Diagnostic", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -467,10 +561,40 @@ public class NaturePackageImpl extends EPackageImpl implements NaturePackage {
 			 "icon", "{{context-path}}/images/forest.png"
 		   });	
 		addAnnotation
-		  (getЛес_ЖивыеСущества(), 
+		  (getЛес__СоздатьЛешего__String_String_String_String(), 
 		   source, 
 		   new String[] {
-			 "model-element-label", "\u0416\u0438\u0432\u044b\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430",
+			 "web-operation", "role: factory\r\nfeature: \u043b\u0435\u0448\u0438\u0435\r\n"
+		   });	
+		addAnnotation
+		  ((getЛес__СоздатьЛешего__String_String_String_String()).getEParameters().get(2), 
+		   source, 
+		   new String[] {
+			 "input-type", "password"
+		   });	
+		addAnnotation
+		  ((getЛес__СоздатьЛешего__String_String_String_String()).getEParameters().get(3), 
+		   source, 
+		   new String[] {
+			 "input-type", "password"
+		   });	
+		addAnnotation
+		  (getЛес_Лешие(), 
+		   source, 
+		   new String[] {
+			 "view-features", "login \u0438\u043c\u044f disabled",
+			 "view", "list"
+		   });	
+		addAnnotation
+		  (лешийEClass, 
+		   source, 
+		   new String[] {
+			 "label", "{{\u0438\u043c\u044f}} ({{login}})"
+		   });	
+		addAnnotation
+		  (getЛеший_Питомцы(), 
+		   source, 
+		   new String[] {
 			 "type-column", "{{icon}} {{eclass-label}}"
 		   });	
 		addAnnotation

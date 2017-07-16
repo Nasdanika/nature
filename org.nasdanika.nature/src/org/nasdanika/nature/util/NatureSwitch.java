@@ -7,6 +7,13 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.nasdanika.cdo.security.LoginPasswordHashUser;
+import org.nasdanika.cdo.security.LoginPasswordRealm;
+import org.nasdanika.cdo.security.LoginUser;
+import org.nasdanika.cdo.security.Principal;
+import org.nasdanika.cdo.security.Protected;
+import org.nasdanika.cdo.security.Realm;
+import org.nasdanika.cdo.security.User;
 import org.nasdanika.nature.*;
 
 /**
@@ -69,12 +76,25 @@ public class NatureSwitch<T> extends Switch<T> {
 			case NaturePackage.ЛЕС: {
 				Лес лес = (Лес)theEObject;
 				T result = caseЛес(лес);
+				if (result == null) result = caseLoginPasswordRealm(лес);
+				if (result == null) result = caseRealm(лес);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NaturePackage.ЛЕШИЙ: {
+				Леший леший = (Леший)theEObject;
+				T result = caseЛеший(леший);
+				if (result == null) result = caseLoginPasswordHashUser(леший);
+				if (result == null) result = caseLoginUser(леший);
+				if (result == null) result = caseUser(леший);
+				if (result == null) result = casePrincipal(леший);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case NaturePackage.ЖИВОЕ_СУЩЕСТВО: {
 				ЖивоеСущество живоеСущество = (ЖивоеСущество)theEObject;
 				T result = caseЖивоеСущество(живоеСущество);
+				if (result == null) result = caseProtected(живоеСущество);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -82,6 +102,7 @@ public class NatureSwitch<T> extends Switch<T> {
 				Зверь<?> зверь = (Зверь<?>)theEObject;
 				T result = caseЗверь(зверь);
 				if (result == null) result = caseЖивоеСущество(зверь);
+				if (result == null) result = caseProtected(зверь);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -89,6 +110,7 @@ public class NatureSwitch<T> extends Switch<T> {
 				Растение растение = (Растение)theEObject;
 				T result = caseРастение(растение);
 				if (result == null) result = caseЖивоеСущество(растение);
+				if (result == null) result = caseProtected(растение);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,6 +120,7 @@ public class NatureSwitch<T> extends Switch<T> {
 				if (result == null) result = caseРастение(трава);
 				if (result == null) result = caseПища(трава);
 				if (result == null) result = caseЖивоеСущество(трава);
+				if (result == null) result = caseProtected(трава);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -107,6 +130,7 @@ public class NatureSwitch<T> extends Switch<T> {
 				if (result == null) result = caseЗверь(заяц);
 				if (result == null) result = caseПища(заяц);
 				if (result == null) result = caseЖивоеСущество(заяц);
+				if (result == null) result = caseProtected(заяц);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,6 +139,7 @@ public class NatureSwitch<T> extends Switch<T> {
 				T result = caseЛис(лис);
 				if (result == null) result = caseЗверь(лис);
 				if (result == null) result = caseЖивоеСущество(лис);
+				if (result == null) result = caseProtected(лис);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -245,6 +270,126 @@ public class NatureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseПища(Пища object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Леший</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Леший</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseЛеший(Леший object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Realm</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Realm</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <CR> T caseRealm(Realm<CR> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Login Password Realm</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Login Password Realm</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoginPasswordRealm(LoginPasswordRealm object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Protected</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Protected</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProtected(Protected object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Principal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Principal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrincipal(Principal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>User</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>User</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <CR> T caseUser(User<CR> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Login User</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Login User</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <CR> T caseLoginUser(LoginUser<CR> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Login Password Hash User</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Login Password Hash User</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoginPasswordHashUser(LoginPasswordHashUser object) {
 		return null;
 	}
 

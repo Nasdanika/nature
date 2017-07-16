@@ -4,5 +4,6 @@
    <service>
       <provide interface="org.nasdanika.cdo.CDOTransactionContextProvider"/>
    </service>
+   <property name="default-access-decision" type="String" value="deny"/>
    <reference bind="setSessionProvider" cardinality="1..1" interface="org.eclipse.emf.cdo.session.CDOSessionProvider" name="CDOSessionProvider" policy="static" unbind="clearSessionProvider"/>
 </scr:component>

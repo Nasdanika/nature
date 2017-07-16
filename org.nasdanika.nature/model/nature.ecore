@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nature" nsURI="urn:org.nasdanika.nature" nsPrefix="org.nasdanika.nature">
-  <eClassifiers xsi:type="ecore:EClass" name="Лес">
+  <eClassifiers xsi:type="ecore:EClass" name="Лес" eSuperTypes="../../org.nasdanika.cdo.security/model/security.ecore#//LoginPasswordRealm">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Лес является домом для различных живых существ."/>
     </eAnnotations>
@@ -9,15 +9,44 @@
       <details key="label" value="{{eclass-name}}"/>
       <details key="icon" value="{{context-path}}/images/forest.png"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="живыеСущества" upperBound="-1"
+    <eOperations name="создатьЛешего" eType="#//Diagnostic" eExceptions="ecore:EDataType ../../org.nasdanika.cdo.security/model/security.ecore#//Exception">
+      <eAnnotations source="org.nasdanika.cdo.web.render">
+        <details key="web-operation" value="role: factory&#xD;&#xA;feature: лешие&#xD;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="login" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="имя" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="пароль" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="org.nasdanika.cdo.web.render">
+          <details key="input-type" value="password"/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="подтверждениеПароля" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="org.nasdanika.cdo.web.render">
+          <details key="input-type" value="password"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="лешие" upperBound="-1"
+        eType="#//Леший" containment="true">
+      <eAnnotations source="org.nasdanika.cdo.web.render">
+        <details key="view-features" value="login имя disabled"/>
+        <details key="view" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Леший" eSuperTypes="../../org.nasdanika.cdo.security/model/security.ecore#//LoginPasswordHashUser">
+    <eAnnotations source="org.nasdanika.cdo.web.render">
+      <details key="label" value="{{имя}} ({{login}})"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="имя" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="питомцы" upperBound="-1"
         eType="#//ЖивоеСущество" containment="true">
       <eAnnotations source="org.nasdanika.cdo.web.render">
-        <details key="model-element-label" value="Живые существа"/>
         <details key="type-column" value="{{icon}} {{eclass-label}}"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ЖивоеСущество" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="ЖивоеСущество" abstract="true" eSuperTypes="../../org.nasdanika.cdo.security/model/security.ecore#//Protected">
     <eAnnotations source="org.nasdanika.cdo.web.render">
       <details key="label" value="{{размер}} {{цвет}} {{eclass-name}}"/>
     </eAnnotations>
@@ -72,4 +101,5 @@
     <eLiterals name="Зелёный" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Пища" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Diagnostic" instanceClassName="org.eclipse.emf.common.util.Diagnostic"/>
 </ecore:EPackage>

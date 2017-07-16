@@ -9,6 +9,13 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.nasdanika.cdo.security.LoginPasswordHashUser;
+import org.nasdanika.cdo.security.LoginPasswordRealm;
+import org.nasdanika.cdo.security.LoginUser;
+import org.nasdanika.cdo.security.Principal;
+import org.nasdanika.cdo.security.Protected;
+import org.nasdanika.cdo.security.Realm;
+import org.nasdanika.cdo.security.User;
 import org.nasdanika.nature.*;
 
 /**
@@ -72,6 +79,10 @@ public class NatureAdapterFactory extends AdapterFactoryImpl {
 				return createЛесAdapter();
 			}
 			@Override
+			public Adapter caseЛеший(Леший object) {
+				return createЛешийAdapter();
+			}
+			@Override
 			public Adapter caseЖивоеСущество(ЖивоеСущество object) {
 				return createЖивоеСуществоAdapter();
 			}
@@ -98,6 +109,34 @@ public class NatureAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseПища(Пища object) {
 				return createПищаAdapter();
+			}
+			@Override
+			public <CR> Adapter caseRealm(Realm<CR> object) {
+				return createRealmAdapter();
+			}
+			@Override
+			public Adapter caseLoginPasswordRealm(LoginPasswordRealm object) {
+				return createLoginPasswordRealmAdapter();
+			}
+			@Override
+			public Adapter casePrincipal(Principal object) {
+				return createPrincipalAdapter();
+			}
+			@Override
+			public <CR> Adapter caseUser(User<CR> object) {
+				return createUserAdapter();
+			}
+			@Override
+			public <CR> Adapter caseLoginUser(LoginUser<CR> object) {
+				return createLoginUserAdapter();
+			}
+			@Override
+			public Adapter caseLoginPasswordHashUser(LoginPasswordHashUser object) {
+				return createLoginPasswordHashUserAdapter();
+			}
+			@Override
+			public Adapter caseProtected(Protected object) {
+				return createProtectedAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -228,6 +267,118 @@ public class NatureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createПищаAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.nature.Леший <em>Леший</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.nature.Леший
+	 * @generated
+	 */
+	public Adapter createЛешийAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.Realm <em>Realm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.Realm
+	 * @generated
+	 */
+	public Adapter createRealmAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.LoginPasswordRealm <em>Login Password Realm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.LoginPasswordRealm
+	 * @generated
+	 */
+	public Adapter createLoginPasswordRealmAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.Protected <em>Protected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.Protected
+	 * @generated
+	 */
+	public Adapter createProtectedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.Principal <em>Principal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.Principal
+	 * @generated
+	 */
+	public Adapter createPrincipalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.User <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.User
+	 * @generated
+	 */
+	public Adapter createUserAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.LoginUser <em>Login User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.LoginUser
+	 * @generated
+	 */
+	public Adapter createLoginUserAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.LoginPasswordHashUser <em>Login Password Hash User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.LoginPasswordHashUser
+	 * @generated
+	 */
+	public Adapter createLoginPasswordHashUserAdapter() {
 		return null;
 	}
 

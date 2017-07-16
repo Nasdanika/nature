@@ -58,6 +58,15 @@ public interface NatureFactory extends EFactory {
 	Лис createЛис();
 
 	/**
+	 * Returns a new object of class '<em>Леший</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Леший</em>'.
+	 * @generated
+	 */
+	Леший createЛеший();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -1,28 +1,24 @@
 package org.nasdanika.nature.app.nature;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.web.CDOTransactionHttpServletRequestContext;
 import org.nasdanika.cdo.web.routes.app.Renderer;
 import org.nasdanika.cdo.web.routes.app.ResourceProvider;
-import org.nasdanika.nature.NaturePackage;
-import org.nasdanika.nature.Лес;
+import org.nasdanika.nature.Леший;
 
 /**
  * @generated
  */
-public interface ЛесRenderer<T extends Лес> extends RendererBase<T> {
+public interface ЛешийRenderer<T extends Леший> extends RendererBase<T> {
 	/**
 	 * @generated
 	 */
-	ЛесRenderer<Лес> INSTANCE = new ЛесRenderer<Лес>() {
+	ЛешийRenderer<Леший> INSTANCE = new ЛешийRenderer<Леший>() {
 	};
 
 	/**
@@ -33,7 +29,7 @@ public interface ЛесRenderer<T extends Лес> extends RendererBase<T> {
 			ResourceProvider<CDOTransactionHttpServletRequestContext<LoginPasswordCredentials>> masterResourceProvider)
 			throws Exception {
 
-		return new ЛесRenderer<T>() {
+		return new ЛешийRenderer<T>() {
 
 			@Override
 			public ResourceProvider<CDOTransactionHttpServletRequestContext<LoginPasswordCredentials>> getMasterResourceProvider(
@@ -51,7 +47,7 @@ public interface ЛесRenderer<T extends Лес> extends RendererBase<T> {
 	default LinkedList<Class<?>> getResourceBundleClasses(
 			CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context) throws Exception {
 		LinkedList<Class<?>> ret = new LinkedList<>();
-		ret.add(ЛесRenderer.class);
+//		ret.add(ЛешийRenderer.class);
 		ret.addAll(RendererBase.super.getResourceBundleClasses(context));
 		return ret;
 	}
@@ -59,20 +55,7 @@ public interface ЛесRenderer<T extends Лес> extends RendererBase<T> {
 	@Override
 	default List<EStructuralFeature> getVisibleFeatures(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj, FeaturePredicate predicate) throws Exception {
 		List<EStructuralFeature> visibleFeatures = RendererBase.super.getVisibleFeatures(context, obj, predicate);
-		visibleFeatures.remove(SecurityPackage.Literals.REALM__PACKAGES);
-		visibleFeatures.remove(SecurityPackage.Literals.REALM__GUEST);
-		visibleFeatures.remove(SecurityPackage.Literals.REALM__EVERYONE);
+		visibleFeatures.remove(SecurityPackage.Literals.PRINCIPAL__PERMISSIONS);
 		return visibleFeatures;
 	}
-	
-	@Override
-	default List<EClass> getReferenceElementTypes(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj, EReference reference) throws Exception {
-		
-		// Лешие создаются через операцию Создать Лешего. 
-		if (reference == NaturePackage.Literals.ЛЕС__ЛЕШИЕ) {
-			return Collections.emptyList();
-		}
-		return RendererBase.super.getReferenceElementTypes(context, obj, reference);
-	}
-
 }

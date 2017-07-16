@@ -13,11 +13,17 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.nasdanika.cdo.CDOSessionInitializer;
+import org.nasdanika.cdo.security.Action;
+import org.nasdanika.cdo.security.Class;
+import org.nasdanika.cdo.security.Group;
+import org.nasdanika.cdo.security.Package;
+import org.nasdanika.cdo.security.SecurityFactory;
 import org.nasdanika.core.CoreUtil;
 import org.nasdanika.core.CoreUtil.TokenSource;
 // Import model package(s)
 import org.nasdanika.nature.NatureFactory;
 import org.nasdanika.nature.NaturePackage;
+import org.nasdanika.nature.Лес;
 import org.osgi.service.component.ComponentContext;
 
 public class NatureSessionInitializerComponent implements CDOSessionInitializer {
@@ -58,7 +64,36 @@ public class NatureSessionInitializerComponent implements CDOSessionInitializer 
 
 				resourceSet.getPackageRegistry().put(NaturePackage.eNS_URI, NaturePackage.eINSTANCE);
 				
-				cRes.getContents().add(NatureFactory.eINSTANCE.createЛес());				
+				Лес лес = NatureFactory.eINSTANCE.createЛес();
+				cRes.getContents().add(лес);
+				
+				лес.setGuest(SecurityFactory.eINSTANCE.createGuest());
+				Group everyone = SecurityFactory.eINSTANCE.createGroup();
+				everyone.setName("Все-все-все");
+				лес.setEveryone(everyone);
+				
+				// Контроль доступа к живым существам.
+				Package naturePackage = SecurityFactory.eINSTANCE.createPackage();
+				naturePackage.setName("Природа");
+				naturePackage.setNsURI("urn:org.nasdanika.nature");
+				лес.getPackages().add(naturePackage);
+				
+				Class живоеСуществоClass = SecurityFactory.eINSTANCE.createClass();
+				живоеСуществоClass.setName("ЖивоеСущество");
+				naturePackage.getClasses().add(живоеСуществоClass);
+				
+				Action видетьAction = SecurityFactory.eINSTANCE.createAction();
+				видетьAction.setName("Видеть");
+				видетьAction.getIncludePatterns().add("read:*");
+				видетьAction.getExcludePatterns().add("read:permissions");
+				живоеСуществоClass.getActions().add(видетьAction);
+				
+//				Леший святобор = NatureFactory.eINSTANCE.createЛеший();
+//				святобор.setLogin("святобор");
+//				святобор.setИмя("Святобор");
+//				лес.setPasswordHash(святобор, "владыка");
+//				лес.getЛешие().add(святобор);
+				
 			}
 			transaction.commit();
 			transaction.close();

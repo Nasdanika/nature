@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="org.nasdanika.nature.target" sequenceNumber="2">
+<?pde version="3.8"?><target name="org.nasdanika.nature.target" sequenceNumber="5">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.nasdanika.cdo.feature.feature.group" version="0.1.0.201706250703"/>
-<unit id="org.nasdanika.feature.feature.group" version="0.1.0.201706250703"/>
-<unit id="org.nasdanika.equinox.feature.feature.group" version="0.1.0.201706250703"/>
-<unit id="org.nasdanika.server.jetty.feature.feature.group" version="0.1.0.201706250703"/>
+<unit id="org.nasdanika.cdo.feature.feature.group" version="1.0.0.201707160400"/>
+<unit id="org.nasdanika.equinox.feature.feature.group" version="1.0.0.201707160400"/>
+<unit id="org.nasdanika.feature.feature.group" version="1.0.0.201707160400"/>
+<unit id="org.nasdanika.server.jetty.feature.feature.group" version="1.0.0.201707160400"/>
 <repository location="http://www.nasdanika.org/server/repository"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.yaml.snakeyaml" version="1.17.0"/>
 <unit id="org.nasdanika.webtest.model.feature.feature.group" version="0.1.0.201702081608"/>
+<unit id="org.yaml.snakeyaml" version="1.17.0"/>
 <repository location="http://www.nasdanika.org/repository"/>
 </location>
 </locations>

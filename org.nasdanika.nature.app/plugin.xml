@@ -6,9 +6,13 @@
       <servlet alias="/router" class="org.nasdanika.cdo.web.CDOTransactionRoutingServlet" httpcontextId="org.nasdanika.nature">
          <init-param name="json-pretty-print" value="true">
          </init-param>
-         <init-param name="default-access-decision" value="allow">
+         <init-param name="default-access-decision" value="deny">
          </init-param>
          <init-param name="ws-session-path" value="/session">
+         </init-param>
+         <init-param
+               name="login-url"
+               value="${context-path}/router/index.html">
          </init-param>
       </servlet>
       <!-- NTLM Authentication 
@@ -50,6 +54,11 @@
    
 	
    <extension point="org.nasdanika.web.route">
+      <root-route
+            class="org.nasdanika.cdo.web.routes.RedirectToPrincipalHomeRoute"
+            method="GET"
+            path="index.html">
+      </root-route>
       <root-route class="org.nasdanika.nature.app.NatureRoute" method="GET" pattern="nature\.html">
       </root-route>
       
@@ -71,7 +80,13 @@
          </property>
       </object-route>
       -->
+   <eobject-route class="org.nasdanika.nature.app.nature.GroupRoute" method="*" path="/" target="Group" target-namespace-uri="urn:org.nasdanika.cdo.security">
+      </eobject-route>
+   <eobject-route class="org.nasdanika.nature.app.nature.GuestRoute" method="*" path="/" target="Guest" target-namespace-uri="urn:org.nasdanika.cdo.security">
+      </eobject-route>
    <eobject-route class="org.nasdanika.nature.app.nature.ЛесRoute" method="*" path="/" target="Лес" target-namespace-uri="urn:org.nasdanika.nature">
+      </eobject-route>
+   <eobject-route class="org.nasdanika.nature.app.nature.ЛешийRoute" method="*" path="/" target="Леший" target-namespace-uri="urn:org.nasdanika.nature">
       </eobject-route>
 <eobject-route class="org.nasdanika.nature.app.nature.ТраваRoute" method="*" path="/" target="Трава" target-namespace-uri="urn:org.nasdanika.nature">
       </eobject-route>
@@ -213,7 +228,16 @@ A -&gt; B : Message
       </markdown-pre-processor>      
    </extension>
 <extension point="org.nasdanika.cdo.web.renderer">
+      <renderer eclass-name="Group" namespace-uri="urn:org.nasdanika.cdo.security" renderer="org.nasdanika.nature.app.nature.GroupRenderer">
+      </renderer>
+      
+      <renderer eclass-name="Guest" namespace-uri="urn:org.nasdanika.cdo.security" renderer="org.nasdanika.nature.app.nature.GuestRenderer">
+      </renderer>
+      
       <renderer eclass-name="Лес" namespace-uri="urn:org.nasdanika.nature" renderer="org.nasdanika.nature.app.nature.ЛесRenderer">
+      </renderer>
+      
+      <renderer eclass-name="Леший" namespace-uri="urn:org.nasdanika.nature" renderer="org.nasdanika.nature.app.nature.ЛешийRenderer">
       </renderer>
 
       <renderer eclass-name="Трава" namespace-uri="urn:org.nasdanika.nature" renderer="org.nasdanika.nature.app.nature.ТраваRenderer">

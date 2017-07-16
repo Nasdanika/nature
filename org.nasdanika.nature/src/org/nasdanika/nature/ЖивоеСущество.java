@@ -2,7 +2,7 @@
  */
 package org.nasdanika.nature;
 
-import org.eclipse.emf.cdo.CDOObject;
+import org.nasdanika.cdo.security.Protected;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,10 +20,9 @@ import org.eclipse.emf.cdo.CDOObject;
  * @see org.nasdanika.nature.NaturePackage#getЖивоеСущество()
  * @model abstract="true"
  *        annotation="org.nasdanika.cdo.web.render label='{{\u0440\u0430\u0437\u043c\u0435\u0440}} {{\u0446\u0432\u0435\u0442}} {{eclass-name}}'"
- * @extends CDOObject
  * @generated
  */
-public interface ЖивоеСущество extends CDOObject {
+public interface ЖивоеСущество extends Protected {
 	/**
 	 * Returns the value of the '<em><b>Размер</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.nasdanika.nature.Размер}.

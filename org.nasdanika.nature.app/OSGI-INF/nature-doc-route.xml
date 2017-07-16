@@ -10,6 +10,6 @@
    
    		<reference bind="setCdoSessionProvider" cardinality="1..1" interface="org.eclipse.emf.cdo.session.CDOSessionProvider" name="CDOSessionProvider" policy="static"/>
  
-   <reference bind="setScrService" cardinality="0..1" interface="org.apache.felix.scr.ScrService" name="ScrService" policy="static"/>
+   <reference bind="setServiceComponentRuntime" cardinality="0..1" interface="org.osgi.service.component.runtime.ServiceComponentRuntime" name="ServiceComponentRuntime" policy="static"/>
    
 </scr:component>

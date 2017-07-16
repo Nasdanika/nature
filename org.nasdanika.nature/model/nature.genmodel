@@ -4,8 +4,8 @@
     modelName="nature" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
     complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
-    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" operationReflection="true"
-    importOrganizing="true">
+    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" usedGenPackages="../../org.nasdanika.cdo.security/model/security.genmodel#//security"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>nature.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Nature" basePackage="org.nasdanika" disposableProviderFactory="true"
@@ -21,8 +21,19 @@
       <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Жёлтый"/>
       <genEnumLiterals ecoreEnumLiteral="nature.ecore#//Цвет/Зелёный"/>
     </genEnums>
+    <genDataTypes ecoreDataType="nature.ecore#//Diagnostic"/>
     <genClasses ecoreClass="nature.ecore#//Лес">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nature.ecore#//Лес/живыеСущества"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nature.ecore#//Лес/лешие"/>
+      <genOperations ecoreOperation="nature.ecore#//Лес/создатьЛешего">
+        <genParameters ecoreParameter="nature.ecore#//Лес/создатьЛешего/login"/>
+        <genParameters ecoreParameter="nature.ecore#//Лес/создатьЛешего/имя"/>
+        <genParameters ecoreParameter="nature.ecore#//Лес/создатьЛешего/пароль"/>
+        <genParameters ecoreParameter="nature.ecore#//Лес/создатьЛешего/подтверждениеПароля"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="nature.ecore#//Леший">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nature.ecore#//Леший/имя"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nature.ecore#//Леший/питомцы"/>
     </genClasses>
     <genClasses ecoreClass="nature.ecore#//ЖивоеСущество">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nature.ecore#//ЖивоеСущество/размер"/>

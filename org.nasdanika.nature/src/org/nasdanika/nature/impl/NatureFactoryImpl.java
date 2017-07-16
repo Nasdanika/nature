@@ -2,6 +2,7 @@
  */
 package org.nasdanika.nature.impl;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -58,6 +59,7 @@ public class NatureFactoryImpl extends EFactoryImpl implements NatureFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case NaturePackage.ЛЕС: return (EObject)createЛес();
+			case NaturePackage.ЛЕШИЙ: return (EObject)createЛеший();
 			case NaturePackage.ТРАВА: return (EObject)createТрава();
 			case NaturePackage.ЗАЯЦ: return (EObject)createЗаяц();
 			case NaturePackage.ЛИС: return (EObject)createЛис();
@@ -78,6 +80,8 @@ public class NatureFactoryImpl extends EFactoryImpl implements NatureFactory {
 				return createРазмерFromString(eDataType, initialValue);
 			case NaturePackage.ЦВЕТ:
 				return createЦветFromString(eDataType, initialValue);
+			case NaturePackage.DIAGNOSTIC:
+				return createDiagnosticFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +99,8 @@ public class NatureFactoryImpl extends EFactoryImpl implements NatureFactory {
 				return convertРазмерToString(eDataType, instanceValue);
 			case NaturePackage.ЦВЕТ:
 				return convertЦветToString(eDataType, instanceValue);
+			case NaturePackage.DIAGNOSTIC:
+				return convertDiagnosticToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +151,16 @@ public class NatureFactoryImpl extends EFactoryImpl implements NatureFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Леший createЛеший() {
+		ЛешийImpl леший = new ЛешийImpl();
+		return леший;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Размер createРазмерFromString(EDataType eDataType, String initialValue) {
 		Размер result = Размер.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -178,6 +194,24 @@ public class NatureFactoryImpl extends EFactoryImpl implements NatureFactory {
 	 */
 	public String convertЦветToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Diagnostic createDiagnosticFromString(EDataType eDataType, String initialValue) {
+		return (Diagnostic)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDiagnosticToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -4,10 +4,12 @@ package org.nasdanika.nature;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.nasdanika.cdo.security.SecurityPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,13 +71,49 @@ public interface NaturePackage extends EPackage {
 	int ЛЕС = 0;
 
 	/**
-	 * The feature id for the '<em><b>Живые Существа</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Administrators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЛЕС__ЖИВЫЕ_СУЩЕСТВА = 0;
+	int ЛЕС__ADMINISTRATORS = SecurityPackage.LOGIN_PASSWORD_REALM__ADMINISTRATORS;
+
+	/**
+	 * The feature id for the '<em><b>Guest</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС__GUEST = SecurityPackage.LOGIN_PASSWORD_REALM__GUEST;
+
+	/**
+	 * The feature id for the '<em><b>Everyone</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС__EVERYONE = SecurityPackage.LOGIN_PASSWORD_REALM__EVERYONE;
+
+	/**
+	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС__PACKAGES = SecurityPackage.LOGIN_PASSWORD_REALM__PACKAGES;
+
+	/**
+	 * The feature id for the '<em><b>Лешие</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС__ЛЕШИЕ = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Лес</em>' class.
@@ -84,7 +122,70 @@ public interface NaturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ЛЕС_FEATURE_COUNT = 1;
+	int ЛЕС_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Authenticate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___AUTHENTICATE__OBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___AUTHENTICATE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get All Users</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___GET_ALL_USERS = SecurityPackage.LOGIN_PASSWORD_REALM___GET_ALL_USERS;
+
+	/**
+	 * The operation id for the '<em>Clear Permissions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___CLEAR_PERMISSIONS__EOBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___CLEAR_PERMISSIONS__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Is Administrator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___IS_ADMINISTRATOR__PRINCIPAL = SecurityPackage.LOGIN_PASSWORD_REALM___IS_ADMINISTRATOR__PRINCIPAL;
+
+	/**
+	 * The operation id for the '<em>Set Password Hash</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING = SecurityPackage.LOGIN_PASSWORD_REALM___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
+
+	/**
+	 * The operation id for the '<em>Get User</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___GET_USER__STRING = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
+
+	/**
+	 * The operation id for the '<em>Создать Лешего</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕС___СОЗДАТЬ_ЛЕШЕГО__STRING_STRING_STRING_STRING = SecurityPackage.LOGIN_PASSWORD_REALM_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Лес</em>' class.
@@ -93,7 +194,7 @@ public interface NaturePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ЛЕС_OPERATION_COUNT = 0;
+	int ЛЕС_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_REALM_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЖивоеСуществоImpl <em>Живое Существо</em>}' class.
@@ -103,43 +204,7 @@ public interface NaturePackage extends EPackage {
 	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЖивоеСущество()
 	 * @generated
 	 */
-	int ЖИВОЕ_СУЩЕСТВО = 1;
-
-	/**
-	 * The feature id for the '<em><b>Размер</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ЖИВОЕ_СУЩЕСТВО__РАЗМЕР = 0;
-
-	/**
-	 * The feature id for the '<em><b>Цвет</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ЖИВОЕ_СУЩЕСТВО__ЦВЕТ = 1;
-
-	/**
-	 * The number of structural features of the '<em>Живое Существо</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ЖИВОЕ_СУЩЕСТВО_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Живое Существо</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ЖИВОЕ_СУЩЕСТВО_OPERATION_COUNT = 0;
+	int ЖИВОЕ_СУЩЕСТВО = 2;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЗверьImpl <em>Зверь</em>}' class.
@@ -149,7 +214,247 @@ public interface NaturePackage extends EPackage {
 	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЗверь()
 	 * @generated
 	 */
-	int ЗВЕРЬ = 2;
+	int ЗВЕРЬ = 3;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.nature.impl.РастениеImpl <em>Растение</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.nature.impl.РастениеImpl
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getРастение()
+	 * @generated
+	 */
+	int РАСТЕНИЕ = 4;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.nature.impl.ТраваImpl <em>Трава</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.nature.impl.ТраваImpl
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getТрава()
+	 * @generated
+	 */
+	int ТРАВА = 5;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЗаяцImpl <em>Заяц</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.nature.impl.ЗаяцImpl
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЗаяц()
+	 * @generated
+	 */
+	int ЗАЯЦ = 6;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЛисImpl <em>Лис</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.nature.impl.ЛисImpl
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЛис()
+	 * @generated
+	 */
+	int ЛИС = 7;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.nature.Пища <em>Пища</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.nature.Пища
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getПища()
+	 * @generated
+	 */
+	int ПИЩА = 8;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЛешийImpl <em>Леший</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.nature.impl.ЛешийImpl
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЛеший()
+	 * @generated
+	 */
+	int ЛЕШИЙ = 1;
+
+	/**
+	 * The feature id for the '<em><b>Member Of</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__MEMBER_OF = SecurityPackage.LOGIN_PASSWORD_HASH_USER__MEMBER_OF;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__PERMISSIONS = SecurityPackage.LOGIN_PASSWORD_HASH_USER__PERMISSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__DISABLED = SecurityPackage.LOGIN_PASSWORD_HASH_USER__DISABLED;
+
+	/**
+	 * The feature id for the '<em><b>Login</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__LOGIN = SecurityPackage.LOGIN_PASSWORD_HASH_USER__LOGIN;
+
+	/**
+	 * The feature id for the '<em><b>Password Hash</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__PASSWORD_HASH = SecurityPackage.LOGIN_PASSWORD_HASH_USER__PASSWORD_HASH;
+
+	/**
+	 * The feature id for the '<em><b>Имя</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__ИМЯ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Питомцы</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ__ПИТОМЦЫ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Леший</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Accept</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ___ACCEPT__PRINCIPALVISITOR = SecurityPackage.LOGIN_PASSWORD_HASH_USER___ACCEPT__PRINCIPALVISITOR;
+
+	/**
+	 * The operation id for the '<em>Get Realm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ___GET_REALM = SecurityPackage.LOGIN_PASSWORD_HASH_USER___GET_REALM;
+
+	/**
+	 * The number of operations of the '<em>Леший</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛЕШИЙ_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО__PERMISSIONS = SecurityPackage.PROTECTED__PERMISSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Размер</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО__РАЗМЕР = SecurityPackage.PROTECTED_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Цвет</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО__ЦВЕТ = SecurityPackage.PROTECTED_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Живое Существо</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО_FEATURE_COUNT = SecurityPackage.PROTECTED_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP = SecurityPackage.PROTECTED___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Get Grantees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО___GET_GRANTEES = SecurityPackage.PROTECTED___GET_GRANTEES;
+
+	/**
+	 * The number of operations of the '<em>Живое Существо</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖИВОЕ_СУЩЕСТВО_OPERATION_COUNT = SecurityPackage.PROTECTED_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЗВЕРЬ__PERMISSIONS = ЖИВОЕ_СУЩЕСТВО__PERMISSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Размер</b></em>' attribute.
@@ -179,6 +484,24 @@ public interface NaturePackage extends EPackage {
 	int ЗВЕРЬ_FEATURE_COUNT = ЖИВОЕ_СУЩЕСТВО_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЗВЕРЬ___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP = ЖИВОЕ_СУЩЕСТВО___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Get Grantees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЗВЕРЬ___GET_GRANTEES = ЖИВОЕ_СУЩЕСТВО___GET_GRANTEES;
+
+	/**
 	 * The operation id for the '<em>Ест</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,14 +520,13 @@ public interface NaturePackage extends EPackage {
 	int ЗВЕРЬ_OPERATION_COUNT = ЖИВОЕ_СУЩЕСТВО_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.nature.impl.РастениеImpl <em>Растение</em>}' class.
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.nature.impl.РастениеImpl
-	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getРастение()
 	 * @generated
+	 * @ordered
 	 */
-	int РАСТЕНИЕ = 3;
+	int РАСТЕНИЕ__PERMISSIONS = ЖИВОЕ_СУЩЕСТВО__PERMISSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Размер</b></em>' attribute.
@@ -234,6 +556,24 @@ public interface NaturePackage extends EPackage {
 	int РАСТЕНИЕ_FEATURE_COUNT = ЖИВОЕ_СУЩЕСТВО_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int РАСТЕНИЕ___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP = ЖИВОЕ_СУЩЕСТВО___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Get Grantees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int РАСТЕНИЕ___GET_GRANTEES = ЖИВОЕ_СУЩЕСТВО___GET_GRANTEES;
+
+	/**
 	 * The number of operations of the '<em>Растение</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,14 +583,13 @@ public interface NaturePackage extends EPackage {
 	int РАСТЕНИЕ_OPERATION_COUNT = ЖИВОЕ_СУЩЕСТВО_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.nature.impl.ТраваImpl <em>Трава</em>}' class.
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.nature.impl.ТраваImpl
-	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getТрава()
 	 * @generated
+	 * @ordered
 	 */
-	int ТРАВА = 4;
+	int ТРАВА__PERMISSIONS = РАСТЕНИЕ__PERMISSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Размер</b></em>' attribute.
@@ -280,6 +619,24 @@ public interface NaturePackage extends EPackage {
 	int ТРАВА_FEATURE_COUNT = РАСТЕНИЕ_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТРАВА___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP = РАСТЕНИЕ___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Get Grantees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТРАВА___GET_GRANTEES = РАСТЕНИЕ___GET_GRANTEES;
+
+	/**
 	 * The number of operations of the '<em>Трава</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,14 +646,13 @@ public interface NaturePackage extends EPackage {
 	int ТРАВА_OPERATION_COUNT = РАСТЕНИЕ_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЗаяцImpl <em>Заяц</em>}' class.
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.nature.impl.ЗаяцImpl
-	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЗаяц()
 	 * @generated
+	 * @ordered
 	 */
-	int ЗАЯЦ = 5;
+	int ЗАЯЦ__PERMISSIONS = ЗВЕРЬ__PERMISSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Размер</b></em>' attribute.
@@ -326,6 +682,24 @@ public interface NaturePackage extends EPackage {
 	int ЗАЯЦ_FEATURE_COUNT = ЗВЕРЬ_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЗАЯЦ___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP = ЗВЕРЬ___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Get Grantees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЗАЯЦ___GET_GRANTEES = ЗВЕРЬ___GET_GRANTEES;
+
+	/**
 	 * The operation id for the '<em>Ест</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,14 +718,13 @@ public interface NaturePackage extends EPackage {
 	int ЗАЯЦ_OPERATION_COUNT = ЗВЕРЬ_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.nature.impl.ЛисImpl <em>Лис</em>}' class.
+	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.nature.impl.ЛисImpl
-	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЛис()
 	 * @generated
+	 * @ordered
 	 */
-	int ЛИС = 6;
+	int ЛИС__PERMISSIONS = ЗВЕРЬ__PERMISSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Размер</b></em>' attribute.
@@ -381,6 +754,24 @@ public interface NaturePackage extends EPackage {
 	int ЛИС_FEATURE_COUNT = ЗВЕРЬ_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Authorize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛИС___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP = ЗВЕРЬ___AUTHORIZE__CONTEXT_PRINCIPAL_STRING_STRING_MAP;
+
+	/**
+	 * The operation id for the '<em>Get Grantees</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЛИС___GET_GRANTEES = ЗВЕРЬ___GET_GRANTEES;
+
+	/**
 	 * The operation id for the '<em>Ест</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,16 +788,6 @@ public interface NaturePackage extends EPackage {
 	 * @ordered
 	 */
 	int ЛИС_OPERATION_COUNT = ЗВЕРЬ_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.nature.Пища <em>Пища</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.nature.Пища
-	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getПища()
-	 * @generated
-	 */
-	int ПИЩА = 7;
 
 	/**
 	 * The number of structural features of the '<em>Пища</em>' class.
@@ -434,7 +815,7 @@ public interface NaturePackage extends EPackage {
 	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getРазмер()
 	 * @generated
 	 */
-	int РАЗМЕР = 8;
+	int РАЗМЕР = 9;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.nature.Цвет <em>Цвет</em>}' enum.
@@ -444,7 +825,18 @@ public interface NaturePackage extends EPackage {
 	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЦвет()
 	 * @generated
 	 */
-	int ЦВЕТ = 9;
+	int ЦВЕТ = 10;
+
+
+	/**
+	 * The meta object id for the '<em>Diagnostic</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.common.util.Diagnostic
+	 * @see org.nasdanika.nature.impl.NaturePackageImpl#getDiagnostic()
+	 * @generated
+	 */
+	int DIAGNOSTIC = 11;
 
 
 	/**
@@ -458,15 +850,25 @@ public interface NaturePackage extends EPackage {
 	EClass getЛес();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.nasdanika.nature.Лес#getЖивыеСущества <em>Живые Существа</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.nature.Лес#getЛешие <em>Лешие</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Живые Существа</em>'.
-	 * @see org.nasdanika.nature.Лес#getЖивыеСущества()
+	 * @return the meta object for the containment reference list '<em>Лешие</em>'.
+	 * @see org.nasdanika.nature.Лес#getЛешие()
 	 * @see #getЛес()
 	 * @generated
 	 */
-	EReference getЛес_ЖивыеСущества();
+	EReference getЛес_Лешие();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.nature.Лес#создатьЛешего(java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Создать Лешего</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Создать Лешего</em>' operation.
+	 * @see org.nasdanika.nature.Лес#создатьЛешего(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getЛес__СоздатьЛешего__String_String_String_String();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.nature.ЖивоеСущество <em>Живое Существо</em>}'.
@@ -571,6 +973,38 @@ public interface NaturePackage extends EPackage {
 	EClass getПища();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.nature.Леший <em>Леший</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Леший</em>'.
+	 * @see org.nasdanika.nature.Леший
+	 * @generated
+	 */
+	EClass getЛеший();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.nature.Леший#getИмя <em>Имя</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Имя</em>'.
+	 * @see org.nasdanika.nature.Леший#getИмя()
+	 * @see #getЛеший()
+	 * @generated
+	 */
+	EAttribute getЛеший_Имя();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.nature.Леший#getПитомцы <em>Питомцы</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Питомцы</em>'.
+	 * @see org.nasdanika.nature.Леший#getПитомцы()
+	 * @see #getЛеший()
+	 * @generated
+	 */
+	EReference getЛеший_Питомцы();
+
+	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.nature.Размер <em>Размер</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -589,6 +1023,17 @@ public interface NaturePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getЦвет();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.Diagnostic <em>Diagnostic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Diagnostic</em>'.
+	 * @see org.eclipse.emf.common.util.Diagnostic
+	 * @model instanceClass="org.eclipse.emf.common.util.Diagnostic"
+	 * @generated
+	 */
+	EDataType getDiagnostic();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -624,12 +1069,20 @@ public interface NaturePackage extends EPackage {
 		EClass ЛЕС = eINSTANCE.getЛес();
 
 		/**
-		 * The meta object literal for the '<em><b>Живые Существа</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Лешие</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ЛЕС__ЖИВЫЕ_СУЩЕСТВА = eINSTANCE.getЛес_ЖивыеСущества();
+		EReference ЛЕС__ЛЕШИЕ = eINSTANCE.getЛес_Лешие();
+
+		/**
+		 * The meta object literal for the '<em><b>Создать Лешего</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ЛЕС___СОЗДАТЬ_ЛЕШЕГО__STRING_STRING_STRING_STRING = eINSTANCE.getЛес__СоздатьЛешего__String_String_String_String();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.nature.impl.ЖивоеСуществоImpl <em>Живое Существо</em>}' class.
@@ -726,6 +1179,32 @@ public interface NaturePackage extends EPackage {
 		EClass ПИЩА = eINSTANCE.getПища();
 
 		/**
+		 * The meta object literal for the '{@link org.nasdanika.nature.impl.ЛешийImpl <em>Леший</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.nature.impl.ЛешийImpl
+		 * @see org.nasdanika.nature.impl.NaturePackageImpl#getЛеший()
+		 * @generated
+		 */
+		EClass ЛЕШИЙ = eINSTANCE.getЛеший();
+
+		/**
+		 * The meta object literal for the '<em><b>Имя</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ЛЕШИЙ__ИМЯ = eINSTANCE.getЛеший_Имя();
+
+		/**
+		 * The meta object literal for the '<em><b>Питомцы</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ЛЕШИЙ__ПИТОМЦЫ = eINSTANCE.getЛеший_Питомцы();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.nature.Размер <em>Размер</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -744,6 +1223,16 @@ public interface NaturePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ЦВЕТ = eINSTANCE.getЦвет();
+
+		/**
+		 * The meta object literal for the '<em>Diagnostic</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.common.util.Diagnostic
+		 * @see org.nasdanika.nature.impl.NaturePackageImpl#getDiagnostic()
+		 * @generated
+		 */
+		EDataType DIAGNOSTIC = eINSTANCE.getDiagnostic();
 
 	}
 
