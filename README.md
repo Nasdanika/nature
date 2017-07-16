@@ -17,3 +17,4 @@
 * Распакуйте, 
 * Запустите ``eclipse.exe`` для Windows или ``eclipse`` для Linux.
 * Откройте http://localhost:8080/nature/index.html в Web браузере.      
+* Интегрированная документация http://localhost:8080/nature/router/doc.html.      
