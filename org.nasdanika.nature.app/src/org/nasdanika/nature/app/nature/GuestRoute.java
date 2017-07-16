@@ -34,6 +34,11 @@ public class GuestRoute extends RouteBase<Guest> implements GuestRenderer {
 			@QueryParameter("url") String returnURL,
 			@QueryParameter("login") String login,
 			@QueryParameter("password") String password) throws Exception {
+		
+		// If there are no users then don't show the login form.
+		if (target.getRealm().isAdministrator(target)) {
+			return super.getHomeHtml(context, target);
+		}
 					
 		Form loginForm = processLogin(context, returnURL, login, password);
 		if (loginForm == null) {

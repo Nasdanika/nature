@@ -87,13 +87,6 @@ public class NatureSessionInitializerComponent implements CDOSessionInitializer 
 				видетьAction.getIncludePatterns().add("read:*");
 				видетьAction.getExcludePatterns().add("read:permissions");
 				живоеСуществоClass.getActions().add(видетьAction);
-				
-//				Леший святобор = NatureFactory.eINSTANCE.createЛеший();
-//				святобор.setLogin("святобор");
-//				святобор.setИмя("Святобор");
-//				лес.setPasswordHash(святобор, "владыка");
-//				лес.getЛешие().add(святобор);
-				
 			}
 			transaction.commit();
 			transaction.close();

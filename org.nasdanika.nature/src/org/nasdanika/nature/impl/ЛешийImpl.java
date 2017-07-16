@@ -7,6 +7,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.nasdanika.cdo.security.Action;
+import org.nasdanika.cdo.security.Group;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.security.impl.LoginUserImpl;
@@ -102,12 +104,23 @@ public class ЛешийImpl extends LoginUserImpl<LoginPasswordCredentials> impl
 	
 	@Override
 	public AccessDecision authorize(Context context, EObject target, String action, String qualifier, Map<String, Object> environment) throws Exception {
-		// Лешим разрешается видеть имя, логин и живых существ других леших.		
-		if (AuthorizationProvider.StandardAction.read.name().equals(action) && target instanceof Лес && (CoreUtil.isBlank(qualifier) || qualifier.equals("лешие"))) {
-			return AccessDecision.ALLOW;
-		}
-		if (AuthorizationProvider.StandardAction.read.name().equals(action) && target instanceof Леший && (CoreUtil.isBlank(qualifier) || qualifier.equals("login") || qualifier.equals("имя") || qualifier.equals("питомцы"))) {
-			return AccessDecision.ALLOW;
+		// Лешим разрешается видеть имя, логин и живых существ других леших, a также имена групп и действий		
+		if (AuthorizationProvider.StandardAction.read.name().equals(action)) {
+			if (target instanceof Лес && (CoreUtil.isBlank(qualifier) || qualifier.equals("лешие"))) {
+				return AccessDecision.ALLOW;
+			}
+			
+			if (target instanceof Леший && (CoreUtil.isBlank(qualifier) || qualifier.equals("login") || qualifier.equals("имя") || qualifier.equals("питомцы"))) {
+				return AccessDecision.ALLOW;
+			}
+			
+			if (target instanceof Group && (CoreUtil.isBlank(qualifier) || qualifier.equals("name"))) {
+				return AccessDecision.ALLOW;
+			}
+			
+			if (target instanceof Action && (CoreUtil.isBlank(qualifier) || qualifier.equals("name"))) {
+				return AccessDecision.ALLOW;
+			}
 		}
 		return super.authorize(context, target, action, qualifier, environment);
 	}

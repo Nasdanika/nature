@@ -1,11 +1,11 @@
 package org.nasdanika.nature.app;
 
-import org.nasdanika.nature.NatureFactory;
-import org.nasdanika.nature.Заяц;
-import org.nasdanika.nature.Лес;
-import org.nasdanika.nature.Лис;
-import org.nasdanika.nature.Трава;
-import org.nasdanika.nature.Цвет;
+//import org.nasdanika.nature.NatureFactory;
+//import org.nasdanika.nature.Заяц;
+//import org.nasdanika.nature.Лес;
+//import org.nasdanika.nature.Лис;
+//import org.nasdanika.nature.Трава;
+//import org.nasdanika.nature.Цвет;
 
 public class ModelAsLanguage {
 
