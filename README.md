@@ -8,8 +8,8 @@
 * [Видео показывающее процесс создания модели и веб приложения](https://youtu.be/nYIscAuDoCI). 
 * [Многопользовательские MDD Web Приложения](https://youtu.be/todo) (видео).
 * Инсталляция
-    * [Windows](http://www.nasdanika.org/products/nature/products/)
-    * [Linux](http://www.nasdanika.org/products/nature/products/)
+    * [Windows](http://www.nasdanika.org/products/nature/products/org.nasdanika.nature.product-win32.win32.x86_64.zip).
+    * [Linux](http://www.nasdanika.org/products/nature/products/org.nasdanika.nature.product-linux.gtk.x86_64.zip).
     
 ## Запуск
 
