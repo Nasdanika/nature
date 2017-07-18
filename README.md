@@ -5,8 +5,8 @@
 
 ## Ресурсы
 
-* [Видео показывающее процесс создания модели и веб приложения](https://youtu.be/nYIscAuDoCI). 
-* [Многопользовательские MDD Web Приложения](https://youtu.be/todo) (видео).
+* [Видео показывающее процесс создания модели и веб приложения](https://youtu.be/nYIscAuDoCI) - 22 минуты. 
+* [Многопользовательские MDD Web Приложения](http://www.youtube.com/watch?v=fZc4ftVTdI8) - 15-ти минутное видео.
 * Инсталляция
     * [Windows](http://www.nasdanika.org/products/nature/products/org.nasdanika.nature.product-win32.win32.x86_64.zip).
     * [Linux](http://www.nasdanika.org/products/nature/products/org.nasdanika.nature.product-linux.gtk.x86_64.zip).
